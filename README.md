@@ -173,8 +173,6 @@ kopkenClone2.0/
 git clone https://github.com/<username>/kopkenClone2.0.git
 ```
 
-> Ganti `<username>` dengan username GitHub pemilik repo. Kalau repo-nya private, pastikan kamu sudah login atau memakai SSH:
->
 > ```bash
 > https://github.com/jojohyperbackend-hub/kopken-clone2-0.git
 > ```
@@ -202,8 +200,8 @@ Buka alamat yang muncul di terminal (biasanya **http://localhost:5173**).
 ### 5. Build untuk production
 
 ```bash
-npm run build     # hasil build ada di folder dist/
-npm run preview   # cek hasil build secara lokal
+npm run build     
+npm run preview   
 ```
 
 ### Troubleshooting
