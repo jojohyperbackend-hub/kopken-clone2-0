@@ -1,0 +1,342 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bodoni-moda";
+@import "@fontsource-variable/jost";
+@import "./variables.css";
+
+@theme inline {
+  --color-bg-base: var(--color-bg-base);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-text-body: var(--color-text-body);
+  --color-text-heading: var(--color-text-heading);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-hairline: var(--color-hairline);
+  --color-surface-strong: var(--color-surface-strong);
+  --color-surface-strong-text: var(--color-surface-strong-text);
+  --color-border: var(--color-border);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-strong: var(--shadow-strong);
+
+  --spacing-section-sm: var(--space-section-sm);
+  --spacing-section-md: var(--space-section-md);
+  --spacing-section-lg: var(--space-section-lg);
+}
+
+@layer base {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  line-height: var(--line-height-body);
+  transition: var(--theme-transition);
+  overflow-x: hidden;
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: inherit;
+  line-height: var(--line-height-heading);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--palette-milk-foam);
+}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes kopken-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kopken-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes kopken-scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(26px);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+}
+
+/* ───────────────── Lapisan kemewahan ───────────────── */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern', 'liga';
+  font-weight: 400;
+}
+
+/* Grain halus seperti kertas kemasan kopi */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+:root[data-theme='dark'] body::after {
+  mix-blend-mode: screen;
+  opacity: 0.035;
+}
+
+.font-display {
+  font-family: var(--font-heading);
+  font-variation-settings: 'opsz' 96;
+}
+
+/* Label bagian: garis emas tipis + teks serif miring */
+.section-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-accent);
+}
+
+.section-mark::before {
+  content: '';
+  width: 2.25rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+/* Bingkai lengkung ala pintu kedai */
+.arch {
+  border-radius: var(--radius-arch);
+}
+
+/* Tombol utama */
+.btn-lux {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 999px;
+  padding: 1rem 1.6rem 1rem 1.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 500ms var(--ease-lux), transform 500ms var(--ease-lux), box-shadow 500ms var(--ease-lux);
+}
+
+.btn-lux::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--btn-hover-bg, var(--palette-milk-foam));
+  transform: translateY(101%);
+  transition: transform 550ms var(--ease-lux);
+}
+
+.btn-lux:hover::before,
+.btn-lux:focus-visible::before {
+  transform: translateY(0);
+}
+
+.btn-lux:hover {
+  color: var(--btn-hover-color, var(--palette-espresso));
+  transform: translateY(-2px);
+}
+
+.btn-lux .btn-arrow {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 500ms var(--ease-lux);
+}
+
+.btn-lux .btn-arrow svg {
+  color: var(--btn-arrow-color, var(--palette-espresso));
+}
+
+.btn-lux:hover .btn-arrow {
+  transform: rotate(-45deg);
+}
+
+/* Teks berputar (stempel) */
+.stamp-spin {
+  animation: kopken-spin 28s linear infinite;
+}
+
+/* Tirai pembuka gambar hero */
+@keyframes kopken-unveil {
+  from {
+    clip-path: inset(100% 0 0 0 round 999px 999px 18px 18px);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 999px 999px 18px 18px);
+  }
+}
+
+@keyframes kopken-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-unveil {
+  animation: kopken-unveil 1.6s var(--ease-lux) 0.15s both;
+}
+
+.hero-rise > span {
+  display: inline-block;
+  animation: kopken-rise 1.2s var(--ease-lux) both;
+}
+
+@keyframes kopken-steam {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scaleX(1);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scaleX(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-unveil,
+  .hero-rise > span {
+    animation: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+  }
+}
