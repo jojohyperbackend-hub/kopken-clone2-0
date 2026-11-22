@@ -46,9 +46,9 @@ const contactIconMap: Record<string, JSX.Element> = {
 }
 
 const defaultContactChannels: ContactChannel[] = [
-  { id: 'whatsapp', label: 'Nomor telepon/WhatsApp', value: null },
-  { id: 'sosial', label: 'Media sosial', value: null },
-  { id: 'jam', label: 'Jam operasional', value: null },
+  { id: 'whatsapp', label: '08761255127', value: null },
+  { id: 'sosial', label: '@kopikenanganmagsat.id', value: null },
+  { id: 'jam', label: '07.00–21.30 WIB', value: null },
 ]
 
 const defaultCtaContent: CtaContent = {

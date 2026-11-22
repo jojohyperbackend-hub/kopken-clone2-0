@@ -11,7 +11,7 @@ const defaultAboutContent: AboutContent = {
     'Kami bukan bisnis besar dengan cabang di mana-mana. Fokus kami sederhana: menjaga rasa, menjaga pelayanan, dan dikenal karena konsisten — bukan karena ramai sesaat.',
   ],
   personalStoryPlaceholder:
-    'Tambahkan 1–2 kalimat cerita personal/latar belakang pendirian jika ada, misal alasan nama "Margasatwa" dipilih, siapa yang memulai, atau momen pentingnya.',
+    'Kawasan Margasatwa berdekatan dengan Taman Margasatwa Ragunan, perkantoran di area TB Simatupang, serta jalur komuter masyarakat Jakarta Selatan dan Depok, sehingga potensi pembeli harian (daily commuters) sangat tinggi.',
 }
 
 const SteamingCupIcon = () => (

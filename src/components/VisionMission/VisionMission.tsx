@@ -20,7 +20,7 @@ const defaultMissionPoints: MissionPoint[] = [
 ]
 
 const missionPlaceholder =
-  'Tambahkan misi lain sesuai kondisi aktual, misal soal bahan baku lokal, harga terjangkau, dll.'
+  'Kopi Kenangan menetapkan visi dan misi harga yang terjangkau karena mereka ingin mengisi celah pasar di Indonesia dengan menyediakan kopi lokal berkualitas tinggi yang bisa dinikmati sebagai rutinitas harian oleh kalangan muda dan masyarakat kelas menengah tanpa harus membayar mahal seperti di kedai kopi internasional, yang diwujudkan melalui efisiensi biaya operasional lewat konsep kedai grab-and-go demi mengejar volume penjualan dan ekspansi yang cepat.'
 
 const defaultVisionMissionContent: VisionMissionContent = {
   sectionLabel: 'Visi & Misi',
